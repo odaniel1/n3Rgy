@@ -1,0 +1,68 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  out.width = "100%"
+)
+```
+
+
+A lightweight R package for interfacing with the [n3rgy](https://data.n3rgy.com/consumer/home) consumer API to access UK smart meter electricity data.
+
+Before using this package you will need to have followed the instructions at the link above, providing n3rgy with the MPxN and MAC numbers for your smart meter.
+
+## Installation
+
+``` r
+install.packages("remotes")
+remotes::install_github("odaniel1/n3Rgy")
+```
+
+## Example
+
+Get information about your electricity tariff:
+```r
+library(n3Rgy)
+# Examples WILL NOT RUN without a valid MAC number
+my_mac <- "<insert your MAC here>"
+
+tariff <- n3rgy_tariff(my_mac, from = "2023-08-01", to = "2023-08-01")
+
+tariff$standing_charge
+```
+```{r echo = FALSE}
+library(n3Rgy)
+tariff_example$standing_charge
+```
+```r
+head(tariff_example$price_per_kWh)
+```
+```{r echo = FALSE}
+head(tariff_example$price_per_kWh)
+```
+
+Or get your electricity consumption over time:
+
+```r
+consumption <- n3rgy_consumption(my_mac, from = "2023-08-01", to = "2023-08-01")
+
+library(ggplot2)
+
+ggplot(consumption) +
+  geom_col(aes(timestamp, consumption_kWh)) +
+  theme_minimal()
+```
+```{r echo = FALSE,fig.width=8,fig.height=5}
+library(n3Rgy)
+library(ggplot2)
+ggplot(consumption_example) +
+  geom_col(aes(timestamp, consumption_kWh)) +
+  theme_minimal()
+```
