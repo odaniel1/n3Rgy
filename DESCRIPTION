@@ -14,3 +14,5 @@ RoxygenNote: 7.2.3
 Depends: 
     R (>= 2.10)
 LazyData: true
+URL: https://github.com/odaniel1/n3Rgy
+BugReports: https://github.com/odaniel1/n3Rgy/issues
