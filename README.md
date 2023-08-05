@@ -1,6 +1,8 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
+# n3<span style="color:#84aff5">R</span>gy
+
 A lightweight R package for interfacing with the
 [n3rgy](https://data.n3rgy.com/consumer/home) consumer API to access UK
 smart meter electricity data.
