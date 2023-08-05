@@ -1,0 +1,13 @@
+Package: n3Rgy
+Title: Access UK Smartmeter Data From the n3rgy Consumer API
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Owen",
+           family = "Daniel",
+           email = "aaa@bbb.com",
+           role = c("aut", "cre"))
+Description: A minimal package to get electricity consumption and tariff data from the n3rgy Consumer API.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
