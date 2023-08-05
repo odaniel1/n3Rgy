@@ -22,7 +22,7 @@ n3rgy_consumption <- function(mac, from = NULL, to = NULL){
 
   df <- data.frame(
     timestamp = as.POSIXct(unlist(mat[,1]), format="%Y-%m-%d %H:%M", tz="UTC"),
-    value_kWh = unlist(mat[,2])
+    consumption_kWh = unlist(mat[,2])
   )
 }
 
@@ -58,7 +58,7 @@ n3rgy_tariff <- function(mac, from = NULL, to = NULL){
   mat_p <- do.call(rbind, cont$values[[1]]$prices)
   df_p <- data.frame(
     timestamp = as.POSIXct(unlist(mat_p[,1]), format="%Y-%m-%d %H:%M", tz="UTC"),
-    price_per_kWh = unlist(mat_p[,2])
+    price_per_kWh_p = unlist(mat_p[,2])
   )
 
   return(list(standing_charge = df_sc, price_per_kWh = df_p))
