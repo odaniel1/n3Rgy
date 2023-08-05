@@ -4,14 +4,14 @@
 \alias{n3rgy_consumption}
 \title{Get electricity consumption data from n3rgy API}
 \usage{
-n3rgy_consumption(mac, from, to)
+n3rgy_consumption(mac, from = NULL, to = NULL)
 }
 \arguments{
-\item{mac}{The MAC number (also known as GUID/EUI) of the smartmeter of interest.}
+\item{mac}{The MAC number (also known as GUID/EUI) of the smart meter of interest.}
 
-\item{from}{The earliest date you want data from (n3rgy stores data for 13 months).}
+\item{from}{(Optional) A date, or string in \%Y-\%m-\%d format representing the earliest date you want data from (n3rgy stores data for 13 months).}
 
-\item{to}{The latest date that you want data until.}
+\item{to}{(Optional) A date, or string in \%Y-\%m-\%d format representing the latest date that you want data until.}
 }
 \description{
 Returns energy consumption data available from n3rgy.
