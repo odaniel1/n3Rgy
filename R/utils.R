@@ -29,13 +29,15 @@ clean_mac <- function(mac){
 #' @description Cleans a user provided date, and checks for errors.
 #' @param date A date or string purporting to be in %Y-%m-%d format
 clean_date <- function(date){
-  # confirm provided value is a valid date
-  date <- as.Date(date, format = "%Y-%m-%d")
-
-  # cast to character and remove hyphens
-  date <- gsub("-", "", date)
-
-  return(date)
+  if(class(date) == "Date"){
+    return(gsub("-", "", date))
+  }
+  else if(class(date) == "character"){
+    date <- as.Date(date, format = "%Y-%m-%d")
+    return(gsub("-", "", date))
+  } else{
+    stop("Date arguments should be of class date, or a character string in %Y-%m-%d format.")
+  }
 }
 
 #' @title Create URL for n3rgy API

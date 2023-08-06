@@ -8,6 +8,14 @@
 \description{
 A minimal package to get electricity consumption and tariff data from the n3rgy Consumer API.
 }
+\seealso{
+Useful links:
+\itemize{
+  \item \url{https://github.com/odaniel1/n3Rgy}
+  \item Report bugs at \url{https://github.com/odaniel1/n3Rgy/issues}
+}
+
+}
 \author{
 \strong{Maintainer}: Owen Daniel \email{aaa@bbb.com}
 
